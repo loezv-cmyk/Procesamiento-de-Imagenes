@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tomar Foto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="header-link">
+     <h1>Toma una fotografía</h1> 
+    </a>
+    
+  </header>
+  
+  <div class="camara-container">
+
+    <video id="video" autoplay></video>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <div id="botones-iniciales">
+        <button id="btnFoto" class="boton-camara">
+            Tomar Foto
+        </button>
+    </div>
+
+    <div id="botones-finales" style="display:none;">
+        <button id="btnDescargar" class="boton-camara">
+            Descargar Foto
+        </button>
+
+        <button id="btnRepetir" class="boton-camara">
+            Tomar Otra Foto
+        </button>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
