@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AR México</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+  <!-- MindAR para A-Frame -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
+  <link rel="stylesheet" href="ar.css">
+</head>
+
+<body>
+
+  <a href="../escudos.html" class="btn-volver">← Volver</a>
+
+<a-scene 
+  mindar-image="imageTargetSrc: ../escudos/mexico.mind;"
+  color-space="sRGB"
+  embedded
+  vr-mode-ui="enabled: false"
+  device-orientation-permission-ui="enabled: false"
+>
+
+  <a-assets>
+    <a-asset-item id="mexicoModel" src="../modelos/mexico_mock.glb"></a-asset-item>
+  </a-assets>
+
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+  <a-entity mindar-image-target="targetIndex: 0">
+    <a-gltf-model 
+      src="#mexicoModel" 
+      scale="0.5 0.5 0.5" 
+      position="0 0 0">
+    </a-gltf-model>
+  </a-entity>
+
+</a-scene>
+
+</body>
+</html>
