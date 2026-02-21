@@ -6,14 +6,14 @@
 
 
 body {
-    height: 100vh;
+   min-height: 100vh;
     display: grid;
     grid-template-areas: 
         "header header"
         "aside main"
         "footer footer";
     grid-template-columns: 1fr 2fr; /* 1/3 y 2/3 */
-    grid-template-rows: 80px 1fr 60px;
+    grid-template-rows: 80px auto 60px;
      background: linear-gradient(135deg, #002868, #006847, #FF0000);
      color: #FFFFFF;    
      font-family: Arial, Helvetica, sans-serif;
@@ -176,4 +176,9 @@ section {
         font-size: 1rem;
     }
 
+}
+
+video {
+    width: 100%;
+    border-radius: 15px;
 }

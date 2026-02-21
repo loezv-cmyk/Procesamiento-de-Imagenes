@@ -1,0 +1,33 @@
+/* Reset básico */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Escena ocupa toda la pantalla */
+a-scene {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Botón volver */
+.btn-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #00ff88;
+    color: black;
+}
