@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AR México</title>
+
+  <!-- A-Frame -->
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+  <!-- MindAR para A-Frame -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  
+  <!--Para el confetti-->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
+
+  <link rel="stylesheet" href="ar.css">
+
+</head>
+
+<body>
+  <a href="../escudos.html" class="btn-volver">← Volver</a>
+  
+  <div class="camera-frame">
+    <div class="ar-ui">
+      <button id="btnRotar">Girar</button>
+      <button id="btnConfetti">🎉</button>
+      <button id="btnInfo">Info</button>
+    </div>
+    
+    <a-scene
+        mindar-image="imageTargetSrc: ../escudos/targets.mind ;"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false">
+        
+        <a-assets>
+          <a-asset-item id="mexicoModel" src="../modelos/mexico.glb"></a-asset-item>
+          <a-asset-item id="coreaModel" src="../modelos/corea.glb"></a-asset-item>
+          <a-asset-item id="japonModel" src="../modelos/japon.glb"></a-asset-item>
+          <a-asset-item id="sudafricaModel" src="../modelos/sudafrica.glb"></a-asset-item>
+          <a-asset-item id="tunezModel" src="../modelos/mexico_mock.glb"></a-asset-item>
+        </a-assets>
+    
+        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+        <!-- Target 0 → Mexico -->
+        <a-entity mindar-image-target="targetIndex: 0">
+          
+          <!-- MODELO 3D -->
+          <a-gltf-model
+            class="modelo3d"
+            src="#mexicoModel"
+            position="0 -0.5 0"
+            scale="1 1 1">
+          </a-gltf-model>
+
+          <!-- PANEL -->
+          <a-plane
+            class="infoPanel"
+            position="0 0.3 0"
+            width="1.6"
+            height="0.8"
+            color="#006847"
+            opacity="0.75"
+            visible="false">
+          </a-plane>
+        
+          <!-- TEXTO -->
+        
+          <a-text
+            class="infoText"
+            value=""
+            color="white"
+            align="center"
+            width="1.4"
+            wrap-count="28"
+            position="0 0.3 0.01"
+            visible="false">
+          </a-text>
+        </a-entity>
+
+        <!-- Target 1 → Tunez -->
+        <a-entity mindar-image-target="targetIndex: 1">
+          
+          <!-- MODELO 3D -->
+          <a-gltf-model
+            class="modelo3d"
+            src="#tunezModel"
+            position="0 -0.5 0"
+            scale="3 3 3">
+          </a-gltf-model>
+
+          <!-- PANEL -->
+          <a-plane
+            class="infoPanel"
+            position="0 0.3 0"
+            width="1.6"
+            height="0.8"
+            color="#FF0000"
+            opacity="0.85"
+            visible="false">
+          </a-plane>
+        
+          <!-- TEXTO -->
+        
+          <a-text
+            class="infoText"
+            value=""
+            color="white"
+            align="center"
+            width="1.4"
+            wrap-count="28"
+            position="0 0.3 0.01"
+            visible="false">
+          </a-text>
+        </a-entity>
+  
+        <!-- Target 2 → Japon -->
+        <a-entity mindar-image-target="targetIndex: 2">
+          
+          <!-- MODELO 3D -->
+          <a-gltf-model
+            class="modelo3d"
+            src="#japonModel"
+            position="0 -0.1 0"
+            scale="8 8 8">
+          </a-gltf-model>
+
+          <!-- PANEL -->
+          <a-plane
+            class="infoPanel"
+            position="0 0.3 0"
+            width="1.6"
+            height="0.8"
+            color="#030303"
+            opacity="0.85"
+            visible="false">
+          </a-plane>
+        
+          <!-- TEXTO -->
+        
+          <a-text
+            class="infoText"
+            value=""
+            color="white"
+            align="center"
+            width="1.4"
+            wrap-count="28"
+            position="0 0.3 0.01"
+            visible="false">
+          </a-text>
+        </a-entity>
+
+        <!-- Target 3 → Sudafrica -->
+         <a-entity mindar-image-target="targetIndex: 3">
+          
+          <!-- MODELO 3D -->
+          <a-gltf-model
+            class="modelo3d"
+            src="#sudafricaModel"
+            position="0 -1 0"
+            scale="8 8 8">
+          </a-gltf-model>
+
+          <!-- PANEL -->
+          <a-plane
+            class="infoPanel"
+            position="0 0.3 0"
+            width="1.6"
+            height="0.8"
+            color="#e4c518"
+            opacity="0.85"
+            visible="false">
+          </a-plane>
+        
+          <!-- TEXTO -->
+        
+          <a-text
+            class="infoText"
+            value=""
+            color="black"
+            align="center"
+            width="1.4"
+            wrap-count="28"
+            position="0 0.3 0.01"
+            visible="false">
+          </a-text>
+        </a-entity>
+
+        <!-- Target 4 → Corea -->
+        <a-entity mindar-image-target="targetIndex: 4">
+          
+          <!-- MODELO 3D -->
+          <a-gltf-model
+            class="modelo3d"
+            src="#coreaModel"
+            position="0 -0.5 0"
+            scale="2.5 2.5 2.5">
+          </a-gltf-model>
+
+          <!-- PANEL -->
+          <a-plane
+            class="infoPanel"
+            position="0 0.5 0"
+            width="1.6"
+            height="0.8"
+            color="#002868"
+            opacity="0.85"
+            visible="false">
+          </a-plane>
+        
+          <!-- TEXTO -->
+        
+          <a-text
+            class="infoText"
+            value=""
+            color="white"
+            align="center"
+            width="1.4"
+            wrap-count="28"
+            position="0 0.5 0.01"
+            visible="false">
+          </a-text>
+        </a-entity>
+      </a-entity>
+    </a-scene>
+  </div>
+  
+  <script src="ar-controles.js"></script>
+</body>
+</html>
