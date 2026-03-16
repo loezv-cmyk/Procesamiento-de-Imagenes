@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+
+<link rel="stylesheet" href="../estilos.css">
+<link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+
+<header onclick="window.location.href='../index.html'" class="header-link">
+    <h1 id="tituloQuiz"></h1>
+</header>
+
+<main>
+
+<div class="quiz-card">
+
+<h2 id="pregunta"></h2>
+<div id="respuestas" class="respuestas"></div>
+
+<p id="feedback"></p>
+
+<button id="btnSiguiente" class="quiz-btn">
+Siguiente
+</button>
+
+</div>
+
+</main>
+
+<footer>
+<p>Proyecto Mundial 2026</p>
+</footer>
+
+<!-- IMPORTANTE -->
+<script src="quizData.js"></script>
+<script src="quiz.js"></script>
+
+</body>
+</html>
