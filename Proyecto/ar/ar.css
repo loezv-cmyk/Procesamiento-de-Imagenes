@@ -1,0 +1,82 @@
+/* Reset básico */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f5c4d; /* mismo verde que tu página principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contenedor del marco */
+.camera-frame {
+    width: 80vw;
+    height: 70vh;
+    margin: 80px auto;
+    border: 6px solid #00ff88;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 25px #00ff88;
+    position: relative;
+}
+
+/* La escena ahora ocupa solo el marco */
+.camera-frame a-scene {
+    width: 100%;
+    height: 100%;
+}
+
+/* Botón volver */
+.btn-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #00ff88;
+    border: 2px solid #00ff88;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #00ff88;
+    color: black;
+}
+
+.ar-ui{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:15px;
+    z-index:999;
+}
+
+.ar-ui button{
+    background: linear-gradient(135deg,#006b52,#00a878);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+.ar-ui button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(135deg,#008f6e,#00c896);
+}
+
+.ar-ui button:active{
+    transform: scale(0.95);
+}
